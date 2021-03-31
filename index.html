@@ -2,12 +2,12 @@
 </textarea>
 <script>
 console.log(window.navigator.userAgent);
-document.body.addEventListener('keydown',
-  event => {
+document.body.addEventListener('keydown', event => {
     console.log("event.key: " + event.key);
-    console.log("event.key: " + event.ctrlKey);
+    console.log("event.ctrlKey: " + event.ctrlKey);
+    console.log("event.metaKey: " + event.metaKey);
+    console.log("event.shiftKey: " + event.shiftKey);
+    console.log("event.altKey: " + event.altKey);
   }
 );
 </script>
-
-
