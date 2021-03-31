@@ -1,8 +1,76 @@
-<textarea>
+<style>
+  #textarea {
+  	width: 300px;
+  	height: 300px;
+  	margin: 10px;
+  }
+
+  .outdiv {
+   	display: inline-block;
+  	margin: 10px;
+  }
+
+  .output {
+  	width: 160px;
+  	height: 250px;
+  	background: #F0F0F0;
+  }
+</style>
+
+<textarea id="textarea">
 </textarea>
+
+<div class="outdiv">
+	<p>key</p>
+	<textarea readonly id="key" class="output"></textarea>
+</div>
+
+<div class="outdiv">
+	<p>ctrlKey</p>
+	<textarea readonly id="ctrlKey" class="output"></textarea>
+</div>
+
+<div class="outdiv">
+	<p>metaKey</p>
+	<textarea readonly id="metaKey" class="output"></textarea>
+</div>
+
+<div class="outdiv">
+	<p>shiftKey</p>
+	<textarea readonly id="shiftKey" class="output"></textarea>
+</div>
+
+<div class="outdiv">
+	<p>altKey</p>
+	<textarea readonly id="altKey" class="output"></textarea>
+</div>
+
 <script>
 console.log(window.navigator.userAgent);
-document.body.addEventListener('keydown', event => {
+document.getElementById("textarea").addEventListener('keydown', event => {
+    var key = document.getElementById('key');
+  	key.scrollTop = key.scrollHeight;
+    var ctrlKey = document.getElementById('ctrlKey');
+  	ctrlKey.scrollTop = ctrlKey.scrollHeight;
+    var metaKey = document.getElementById('metaKey');
+  	metaKey.scrollTop = metaKey.scrollHeight;
+    var shiftKey = document.getElementById('shiftKey');
+  	shiftKey.scrollTop = shiftKey.scrollHeight;
+    var altKey = document.getElementById('altKey');
+  	altKey.scrollTop = altKey.scrollHeight;
+
+    var key = document.getElementById("key");
+    var ctrlKey = document.getElementById("ctrlKey");
+    var metaKey = document.getElementById("metaKey");
+    var shiftKey = document.getElementById("shiftKey");
+    var altKey = document.getElementById("altKey");
+
+    key.append("key: " + event.key + "\n");
+    ctrlKey.append("ctrlKey: " + event.ctrlKey + "\n");
+    metaKey.append("metaKey: " + event.metaKey + "\n");
+    shiftKey.append("shiftKey: " + event.shiftKey + "\n");
+    altKey.append("altKey: " + event.altKey + "\n");
+
     console.clear();
     console.log("--------------------------------");
     console.log("event.key: " + event.key);
@@ -13,4 +81,5 @@ document.body.addEventListener('keydown', event => {
     console.log("--------------------------------");
   }
 );
+
 </script>
