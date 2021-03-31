@@ -1,4 +1,13 @@
 <textarea>
 </textarea>
 <script>
+console.log(window.navigator.userAgent);
+document.body.addEventListener('keydown',
+  event => {
+    console.log("event.key: " + event.key);
+    console.log("event.key: " + event.ctrlKey);
+  }
+);
 </script>
+
+
